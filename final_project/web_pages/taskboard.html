@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> assignment 5 forum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="general.css">
+<style>
+
+
+
+    #header{
+        height: 80px;
+        background-color: black;
+
+
+
+    }
+
+    h1{
+        margin-top: 10px;
+        margin-left: 10px;
+        
+    }
+    .no-gutters{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #left-col{
+        background-color: rgb(74, 74, 74);
+        padding: 0;
+
+    }
+    #mid-col{
+        padding:0;
+        background-color: rgb(51, 51, 51);
+    }
+    #right-col{
+        background-color: rgb(32, 32, 32);
+        padding: 0;
+    }
+    #task-graphic{
+       width: 100%;
+       height: auto;
+       margin: 10px;
+    }
+
+
+    .table_wraper{
+        border:3px solid black;
+        margin: 0px;
+        min-height: 700px;
+        border-left: 0;
+    }
+
+    .table-title{
+        font-size: 40px;
+        padding: 0px;
+        margin:0;
+        border-bottom: 2px solid black;
+    }
+    .btn-close{
+        color: red;
+    }
+    button{
+        color: red;
+        border-radius: 50px;
+    }
+
+    #sign-out-prompt{
+        margin-top: 20px;
+    }
+
+    .form-group{
+        padding:5px;
+    }
+    
+     td > a {
+      color: white;
+      padding: 0px;
+      margin: 5px;
+    }
+
+    td > a:hover{
+      background-color: rgb(25, 25, 25);
+      padding: 5px;
+      margin:0px
+    }
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+    
+    <div class="row navbar-row no-gutters p-0" >
+        <div class="col-12 navbar-col no-gutters p-0">
+            <nav class="navbar navbar-expand-lg bg-light p-0">
+                <div class="container-fluid">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="landing.html"> Landing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="register.html">Sign Out</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" href="login.html">Switch Accounts</a>
+                      </li>
+
+                    </ul>
+                </div>
+              </nav>
+        </div>
+    </div>
+    <div  class="container-fluid ">
+        <div class="row no-gutters">
+            <div class="col-12 no-gutters">
+                <div id="header" class=" d-flex flex-column ">
+                    <h1 class="">Welcome back Nathan </h1>
+                </div><!--header-->
+            </div><!--col-->
+        </div> <!--row-->
+
+
+        
+
+
+
+
+
+        <div id="body" class="row justify-content-center">
+            <div id="left-col" class="col-4">
+                
+                <div class="row justify-content-center table_wraper">
+                    <div class="col-12">
+                        
+                            <div id="todo-table-title" class="table-title">
+                                TODO
+                            </div> <!-- col11-->
+                 
+                        <table class="table mt-4 text-light">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Task</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col">Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody id="body1">
+                              <tr>
+                                <th scope="row">1</th>
+                                <td><a href="edit_task.html?task_id=1&user_id=1"> wash my car </a></td>
+                                <td>4</td>
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td><a href="edit_task.html?task_id=1&user_id=1"> finish my homework </a></td>
+                                <td>3</td>
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td><a href="edit_task.html?task_id=1&user_id=1">eat food </a></td>
+                                <td>1</td>
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+    
+                            </tbody>
+                          </table>
+                          <form class="form-inline row form1">
+                            <div class="form-group col-7">
+                                <input type="text" class="form-control task-form" placeholder="Task name" name="task" required>
+                            </div>
+                            <div class="form-group col-3">
+                              <input type="text" class="form-control priority-form" placeholder="priority" name="priority">
+                            </div>
+                            <div class="form-group col-2">
+                                <button type="submit" class="btn btn-primary mb-2">Add</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+                
+
+            </div><!--left col-->
+
+            <div id="mid-col" class="col-4 ">
+                <div class="row justify-content-center table_wraper">
+                    <div class="col-12">
+                        
+                            <div id="inprog-table-title" class="table-title">
+                                IN PROGRESS
+                            </div> <!-- col11-->
+                 
+                        <table class="table mt-4 text-light">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Task</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col">Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody id="body2">
+                              <tr>
+                                <th scope="row">1</th>
+                                <td><a href="edit_task.html?task_id=1&user_id=1"> itp303 final project </a></td>
+                                <td>2</td>
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                          
+                         
+                            <form class="form-inline row form2">
+                                <div class="form-group col-7">
+                                    <input type="text" class="form-control task-form" placeholder="Task name" name="task" required>
+                                </div>
+                                <div class="form-group col-3">
+                                  <input type="text" class="form-control priority-form" placeholder="priority" name="priority">
+                                </div>
+                                <div class="form-group col-2">
+                                    <button type="submit" class="btn btn-primary mb-2">Add</button>
+                                </div>
+                              </form>
+
+                    </div>
+                </div>
+             </div><!--mid col-->
+
+            <div id="right-col" class="col-4">
+                <div class="row justify-content-center table_wraper">
+                    <div class="col-12">
+                        
+                            <div id="finished-table-title" class="table-title">
+                                FINISHED
+                            </div> <!-- col11-->
+                 
+                        <table class="table  mt-4 text-light">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Task</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col">Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody id="body3">
+                              <tr>
+                                <th scope="row">1</th>
+                                <td><a href="edit_task.html?task_id=1&user_id=1"> sleep </a></td>
+                                <td>4</td>
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td> <a href="edit_task.html?task_id=1&user_id=1"> breath air </a></td>
+                                <td>3</td>
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                          <form class="form-inline row form3">
+                            <div class="form-group col-7">
+                                <input type="text" class="form-control task-form" placeholder="Task name" name="task" required>
+                            </div>
+                            <div class="form-group col-3">
+                              <input type="text" class="form-control priority-form" placeholder="priority" name="priority">
+                            </div>
+                            <div class="form-group col-2">
+                                <button type="submit" class="btn btn-primary mb-2">Add</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div><!--right col-->
+
+        </div><!--body-->
+    </div> <!--container-fluid-->
+
+    <script>
+
+        function addItems(form, body){
+
+        let validForm = true
+        const task_name = form.querySelector(".task-form").value.trim()
+        if (task_name.length === 0){
+            validForm = false
+         
+        }
+        console.log(task_name)
+        
+        const priority = form.querySelector(".priority-form").value.trim()
+
+        body.innerHTML += '<tr>\
+                                <th scope="row">1</th>\
+                                <td><a href="edit_task.html?task_id=1&user_id=1">' + task_name + ' </a></td>\
+                                <td>'+ priority+'</td>\
+                                <td><button type="button" class="btn-close" aria-label="Close"></button></td>\
+                              </tr>'
+
+        //make the delete button work
+        var buttons = document.querySelectorAll(".btn-close")
+        for(i=0; i<buttons.length; i++){
+            buttons[i].onclick = e => {
+                console.log(e.target.parentNode.parentNode);  // to get the element
+                row = e.target.parentNode.parentNode;
+                row.remove();
+
+            }
+        }
+                        
+        }
+
+     document.querySelector(".form1").onsubmit = function(){
+        let form = document.querySelector(".form1")
+        let body = document.querySelector("#body1")
+        addItems(form, body)
+        return false;
+     }
+     document.querySelector(".form2").onsubmit = function(){
+        let form = document.querySelector(".form2")
+        let body = document.querySelector("#body2")
+        addItems(form, body)
+        return false;
+     }
+     document.querySelector(".form3").onsubmit = function(){
+        let form = document.querySelector(".form3")
+        let body = document.querySelector("#body3")
+        addItems(form, body)
+        return false;
+     }
+
+    var buttons = document.querySelectorAll(".btn-close")
+    for(i=0; i<buttons.length; i++){
+        buttons[i].onclick = e => {
+            console.log(e.target.parentNode.parentNode);  // to get the element
+            row = e.target.parentNode.parentNode;
+            row.remove();
+
+        }
+    }
+
+
+
+
+           
+    </script>
+
+
+</body>
+</html>

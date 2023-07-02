@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> assignment 5 forum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="general.css">
+
+<style>
+
+
+    #header{
+        height: 70px;
+        background-color: rgb(21, 21, 21);
+
+
+    }
+
+
+
+ 
+    .form-group{
+        margin: 8px;
+    }
+    .goback{
+        margin: 8px;
+        padding:12px;
+
+    }
+    .sucessful{
+        color: greenyellow;
+        font-size: 30px;
+    }
+
+
+
+
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light p-0">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="landing.html"> Landing</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="register.html">Sign Out</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link active" href="login.html">Switch Accounts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row no-gutters">
+        <div class="col-12 no-gutters">
+            <div id="header" class=" d-flex flex-column ">
+                <h1 class="">Edit Task</h1>
+            </div><!--header-->
+        </div><!--col-->
+    </div> <!--row-->
+    <p class="sucessful"> </p>
+    
+    <div class="row">
+        <div class="col-6">
+           <!--<form id="signup-form" action="taskboard.html" method="POST"> --> 
+            <form id="signup-form">
+                <!--first name-->
+                <div class="form-group row">
+                    <label for="task" class="form-label col-sm-2 col-form-label" >Task Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="task" class="form-control" value="wash car" id="task" required>
+                    </div> <!-- col sm 10-->
+                </div><!-- form-group -->
+
+                <!--favorite priority optional text field for image url-->
+                <div class="form-group row">
+                    <label for="priority" class="form-label col-sm-2 col-form-label">Priority</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="priority" class="form-control" value="5" id="priority">
+                    </div> <!-- col sm 10-->
+                </div><!-- form-group -->
+
+                <div class="form-group row">
+                <label for="status" class="form-label col-sm-2 col-form-label">Favorite Color</label>
+                <div class="col-sm-10">
+                    <select name="status" class="form-control"  id="status">
+                        <option value="FINISHED">Select a Status</option>
+                        <option value="TODO">To Do</option>
+                        <option value="IN PROGRESS">In Progress</option>
+                        <option value="FINISHED">Finished</option>
+
+                    </select>
+                    <small id="status-error" class="form-text text-danger"></small>
+                </div> <!-- col sm 10-->
+            </div><!-- form-group -->
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div> <!-- .col -->
+                </div> <!-- .form-group -->
+            </form><!-- form-->
+            <div class="goback">
+                <button type="submit" class="btn btn-primary" id="back-bttn">Go Back</button>
+            </div>
+        </div>
+    </div>
+
+              
+   <script>
+
+
+        document.querySelector("#signup-form").onsubmit = function(){
+            document.querySelector(".sucessful").innerHTML = "successfully edited"
+            console.log("hi")
+            return false
+        }
+        document.querySelector("#back-bttn").onclick = function(){
+            window.location.replace('taskboard.html')
+            console.log("hi")
+
+        }
+    
+   </script>
+
+
+
+
+</body>
+</html>

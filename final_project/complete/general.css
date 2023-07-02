@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(31, 31, 31);
+    color:white;
+}
+
+.no-gutters{
+    padding-right: 0;
+    padding-left: 0;
+}

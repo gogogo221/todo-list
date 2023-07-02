@@ -1,0 +1,24 @@
+.navbar-row{
+    padding: 0;
+    margin:0;
+    width: 100%;
+}
+
+.navbar-nav > .nav-item:hover{
+    background-color: grey;
+
+}
+.navbar-nav{
+    font-size: larger;
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+
+
+
+h1{
+    text-align: center;
+}
