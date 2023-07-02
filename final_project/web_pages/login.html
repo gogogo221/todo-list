@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> assignment 5 forum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<style>
+
+    #form-result{
+        visibility: hidden;
+    }
+    body{
+        background-color: grey;
+    }
+    .container{
+        margin-top: 100px;
+        
+        width: 650px;
+        height: 550px;
+        border: 3px solid green;
+        background-color: antiquewhite;
+        border-radius: 5px;
+
+    }
+    h1{
+        text-align: center;
+        background-color: azure;
+        margin-top: 30px;
+    }
+    h6{
+        text-align: center;
+        background-color: beige;
+        margin-top:5px;
+        margin-bottom: 15px;
+    }
+    #signup-form{
+        background-color: palegoldenrod;
+    }
+
+    #out{
+        background-color: brown;
+        padding: 0px;
+
+    }
+    #button_group{
+        margin-top: 20px;
+    }
+    .form-group{
+        margin-top: 10px;
+    }
+    .swap_group{
+        margin-top: 15px;
+    }
+
+
+</style>
+</head>
+
+<body>
+
+    <div class="container col-9">
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h1>Hello Again!</h1>
+                <h6>We're exited to see your progress!</h6>
+            </div><!-- col12-->
+        </div> <!--row-->
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <form id="signup-form">
+
+                    <div class="form-group row">
+                        <label for="email" class="form-label ">Email</label>
+                        <div class="col-12">
+                            <input type="email" name="email" class="form-control form-control-lg" placeholder="asdf@usc.edu" id="email">
+                            <small id="email-error" class="form-text text-danger"></small>
+                        </div> <!-- col sm 10-->
+                    </div><!-- form-group -->
+    
+                    <div class="form-group row">
+                        <label for="password" class="form-label col-form-label">Password</label>
+                        <div class="col-12">
+                            <input type="password" name="email" class="form-control form-control-lg" placeholder="Password" id="password">
+                            <small id="password-error" class="form-text text-danger"></small>
+                        </div> <!-- col sm 10-->
+                    </div><!-- form-group -->
+    
+                    <div id="button_group" class="form-group row justify-content-center">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Log In</button>
+                        </div> <!-- .col -->
+                    </div> <!-- .form-group -->
+                </form><!-- form-->
+                <div class="row swap_group">
+                    <div class="col-12">
+                        <p>Need an account?  <a href="register.html">Register</a></p>
+                    </div>
+                </div>
+            </div> <!--col-->
+        </div> <!--row-->
+
+    </div><!--container-->
+
+
+   
+    
+    <script>
+        /***** Form Events *****/
+		// document.querySelector("#email").onchange = function() {
+		// 	console.log(this.value)
+		// }
+            document.querySelector("#signup-form").onsubmit = function(){
+                let validForm = true
+
+                //first
+                const firstName = document.querySelector("#firstname").value.trim()
+                if (firstName.length === 0){
+                    validForm = false
+                    document.querySelector("#first-error").innerHTML = "First Name cannot be empty."
+                }
+                
+                else if (firstName[0] == firstName[0].toLowerCase() || firstName.slice(1, -1) != firstName.slice(1,-1).toLowerCase() || firstName.length <2){
+                    validForm = false
+                    document.querySelector("#first-error").innerHTML = "Invalid First Name."
+                }
+                
+                else{
+                    document.querySelector("#first-error").innerHTML = ""
+
+                }
+                //last
+                const lastName = document.querySelector("#lastname").value.trim()
+                if (lastName.length === 0){
+                    validForm = false
+                    document.querySelector("#last-error").innerHTML = "Last Name cannot be empty."
+                }
+                
+                else if (lastName[0] == lastName[0].toLowerCase() || lastName.slice(1, -1) != lastName.slice(1,-1).toLowerCase() ){
+                    validForm = false
+                    document.querySelector("#last-error").innerHTML = "Invalid Last Name."
+                }
+                
+                else{
+                    document.querySelector("#last-error").innerHTML = ""
+
+                }
+
+                //email
+                const email = document.querySelector("#email").value.trim()
+     
+                if(email.length === 0){
+                    validForm = false
+                    document.querySelector("#email-error").innerHTML = "Email cannot be empty."
+                }
+                else if (!isValidEmail(email)){
+                    validForm = false
+                    document.querySelector("#email-error").innerHTML = "Invalid Email"
+                }
+                else if(!/(usc.edu$)/.test(email)){
+                    validForm = false
+                    document.querySelector("#email-error").innerHTML = "Must be usc.edu email"
+                }
+                else{
+                    document.querySelector("#email-error").innerHTML = ""
+                }
+                //website
+                const website = document.querySelector("#website").value.trim()
+                if(website.length === 0){
+                    validForm = false
+                    document.querySelector("#website-error").innerHTML = "Website cannot be empty."
+                }
+                else if (!/(^https?:\/\/)/.test(website)){
+                    validForm = false
+                    document.querySelector("#website-error").innerHTML = "Must start with http:// or https://."
+                }
+                else if(!/^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/g.test(website)){
+                    validForm = false
+                    document.querySelector("#website-error").innerHTML = "Invalid URL"
+                }
+                else{
+                    document.querySelector("#website-error").innerHTML = ""
+
+                }
+
+                //phone
+                const phone = document.querySelector("#phone").value.trim()
+                if (phone.length === 0){
+                    validForm = false
+                    document.querySelector("#phone-error").innerHTML = "Phone cannot be empty."
+                }
+                
+                else if (!/(^[0-9][0-9][0-9][ -][0-9][0-9][0-9][ -][0-9][0-9][0-9][0-9]$)/.test(phone)){
+                    validForm = false
+                    document.querySelector("#phone-error").innerHTML = "Invalid phone format."
+                }
+                
+                else{
+                    document.querySelector("#phone-error").innerHTML = ""
+
+                }
+
+                //password
+                const password = document.querySelector("#password").value.trim()
+                if (password.length === 0){
+                    validForm = false
+                    document.querySelector("#password-error").innerHTML = "Password cannot be empty."
+                }
+                
+                else if (!(/([A-Z])/.test(password) && /([a-z])/.test(password) && /([0-9])/.test(password) && /([!@#$%^&*])/.test(password))){
+                    validForm = false
+                    document.querySelector("#password-error").innerHTML = "Insecure password"
+                }
+                
+                else{
+                    document.querySelector("#password-error").innerHTML = ""
+                }
+
+                if(validForm){
+                    document.getElementById("form-result").style.visibility = "visible"
+                    document.querySelector("#name-result").innerHTML = firstName + " " + lastName
+                    document.querySelector("#username-result").innerHTML = email.substring(0, email.search("@"))
+                    try{
+                        document.querySelector("#phone-result").innerHTML = phone.replace(/ /g, "-")
+                    }
+                    catch(e){
+                        console.log(e)
+                    }
+
+                }
+
+                return false
+            }
+
+
+           
+    </script>
+
+
+</body>
+</html>
